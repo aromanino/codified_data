@@ -1,0 +1,10 @@
+{
+  "production":{
+    "host":  "localhost",
+    "port":  6379,
+    "db": 0,
+    "ttl": 0,
+    "auth_pass":null,
+    "clear":false
+  }
+}
