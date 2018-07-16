@@ -1,0 +1,37 @@
+{
+  "name": "codified_data",
+  "version": "1.0.0",
+  "description": "A simple caching module on redis that has `set`, `get` and `delete` methods and works as a codified cache storage. Keys can have a timeout (`ttl`) after which they expire and are deleted from the cache. All keys are stored in a redis instance.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aromanino/codified_data.git"
+  },
+  "keywords": [
+    "secret",
+    "codified",
+    "json",
+    "data",
+    "temp",
+    "hidden",
+    "redis",
+    "cache"
+  ],
+  "author": "Alessandro Romanino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aromanino/codified_data/issues"
+  },
+  "homepage": "https://github.com/aromanino/codified_data#readme",
+  "dependencies": {
+    "cache-manager": "^2.9.0",
+    "cache-manager-redis-store": "^1.5.0",
+    "node-cache": "^4.2.0",
+    "object-encode": "^1.0.2",
+    "propertiesmanager": "^2.0.3",
+    "uuid": "^3.3.2"
+  }
+}
