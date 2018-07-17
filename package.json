@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "install": "mkdir node_custom"
+    "install": "npm install propertiesmanager"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,6 @@
     "cache-manager-redis-store": "^1.5.0",
     "node-cache": "^4.2.0",
     "object-encode": "^1.0.2",
-    "propertiesmanager": "^2.0.3",
     "uuid": "^3.3.2"
   }
 }
