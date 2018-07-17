@@ -1,7 +1,7 @@
 var cacheManager = require('cache-manager');
 var redisStore = require('cache-manager-redis-store');
 const uuidv1 = require('uuid/v1');
-var propertiesmanager = require('propertiesmanager');
+var propertiesmanager = require('propertiesmanager').conf;
 
 
 exports.setup = function (option) {

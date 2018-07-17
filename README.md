@@ -6,8 +6,11 @@ codified_data
 A simple caching module on redis that has `set`, `get` and `delete` methods and works 
 as a codified cache storage.
 Keys can have a timeout (`ttl`) after which they expire and are deleted from the cache.
-All keys are stored in a redis instance.
+All keys are stored in a redis instance. 
+This package also get other helper function like `keys`, `flushAll`, `getTtl`
 
+
+[![NPM](https://nodei.co/npm/codified_data.png?downloads=true&downloadRank=true&stars=true)![NPM](https://nodei.co/npm-dl/codified_data.png?months=6&height=3)](https://nodei.co/npm/codified_data/)
 
 # Install
 
@@ -24,7 +27,7 @@ Or just require the `index.js` file to get the superclass
 
 `setup([options])`
 
-Sets and Init redis connection options. It is possible to define a  `host`, `port`, key `ttl` (in ms).
+Sets and Init redis connection options. It is possible to define a  `host`, `port`, key `ttl` (in ms), `password` and `db` .
 
 ```js
 const codifiedData = require( "codified_data" );
@@ -47,9 +50,10 @@ codifiedData.setup({ttl:0});
 
 `set(value, [ options ], callback )`
 
-Sets a `value` to store in cache and if no error return codified key of stored value, to get access to the value next. It is possible to define a custom  `ttl` (in seconds) for this key.
-callback  has two parameters `err, codifiedKey`. If error `err` contains error message otherwise `codifiedKey` contains
-the codified key of value stored.
+Sets a `value` to store in cache and if no error return codified key of this stored value. 
+It is possible to define a custom  `ttl` (in seconds) for this key.
+callback  has two parameters `err, codifiedKey`. If error `err` contains error message otherwise `codifiedKey`
+contains the codified key associated to a new value stored.
 
 ```js
 obj = { my: "Special", variable: 42 };
@@ -72,7 +76,7 @@ codifiedData.set(obj, function( err, key ){
 `get( key,[options] [callback] )`
 
 Gets a saved value from the cache.
-Returns a `undefined` if not found or expired.
+Returns a `undefined || null` if not found or expired.
 If the value was found it returns the `value` associated to codified key.
 
 ```js
@@ -122,7 +126,7 @@ codifiedData.deleteKey( "45745c60-7b1a-11e8-9c9c-2d42b21b1a3e", function( err, r
 
 `keys([callback] )`
 
-Get all not expired keys
+Get an array of all not expired keys
 
 ```js
 codifiedData.keys(function( err, keys ){
@@ -133,7 +137,7 @@ codifiedData.keys(function( err, keys ){
 });
 ```
 
-## Flush all data (FLUSH):
+## Flush all data (flushAll):
 
 `flushAll([callback])`
 
@@ -148,6 +152,20 @@ codifiedData.flushAll(function( err, result ){
  });  
 ```
 
+## Gwt key ttl (getTtl):
+
+`getTtl(key,[callback])`
+
+Get the remaining time to live of specified key 
+
+```js
+codifiedData.getTtl("45745c60-7b1a-11e8-9c9c-2d42b21b1a3e",function( err, result ){
+   if( !err ){
+         console.log( result );
+         // "ttl": 42
+       }
+ });  
+```
 
 License - "MIT License"
 -----------------------
