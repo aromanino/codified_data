@@ -33,5 +33,8 @@
     "object-encode": "^1.0.2",
     "propertiesmanager": "^2.0.3",
     "uuid": "^3.3.2"
-  }
+  },
+  "bundledDependencies": [
+    "propertiesmanager"
+  ]
 }
