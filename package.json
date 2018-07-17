@@ -1,10 +1,11 @@
 {
   "name": "codified_data",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "description": "A simple caching module on redis that has `set`, `get` and `delete` methods and works as a codified cache storage. Keys can have a timeout (`ttl`) after which they expire and are deleted from the cache. All keys are stored in a redis instance.",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
+    "install":"npm install"
   },
   "repository": {
     "type": "git",
@@ -33,8 +34,5 @@
     "object-encode": "^1.0.2",
     "propertiesmanager": "^2.0.3",
     "uuid": "^3.3.2"
-  },
-  "bundledDependencies": [
-    "propertiesmanager"
-  ]
+  }
 }
