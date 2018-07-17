@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "install": "npm install propertiesmanager"
+    "install": "mkdir node_custom"
   },
   "repository": {
     "type": "git",
