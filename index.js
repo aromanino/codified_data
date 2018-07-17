@@ -24,7 +24,7 @@ exports.setup = function (option) {
 exports.setKey = function (value,options,callback) {
     if(!callback) {
         callback = options;
-        options={};
+        options=null;
     }
     var uuId=uuidv1();
     redisCache.set(uuId, value, options, function(err) {
@@ -45,7 +45,7 @@ exports.deleteKey = function (key,callback) {
 exports.getKey = function (key,options,callback) {
     if(!callback) {
         callback = options;
-        options=null;
+        options={};
     }
     redisCache.get(key, function (err, result){
         if (err) {
