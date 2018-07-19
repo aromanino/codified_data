@@ -18,6 +18,15 @@ exports.setup = function (option) {
         cacheFlush();
     }
 
+
+    // listen for redis connection error event
+    redisCache.store.events.on('redisError', function(error) {
+        // handle error here
+        console.log("!!!! ****** REDIS CACHE ERROR ****** !!!!");
+        console.log(error);
+        console.log("!!!! ****** REDIS CACHE ERROR ****** !!!!");
+    });
+
 };
 
 
