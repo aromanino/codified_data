@@ -20,7 +20,9 @@ exports.setup = function (option) {
 
 
     // listen for redis connection error event
-    redisCache.store.events.on('redisError', function(error) {
+    var redisClient = redisCache.store.getClient();
+
+    redisClient.on('error', (error) => {
         // handle error here
         console.log("!!!! ****** REDIS CACHE ERROR ****** !!!!");
         console.log(error);
